@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Task Manager</a>
+            <div>
+                {% if request.path == '/admin_dashboard/' %}
+                <a href="{% url 'task_list' %}" class="btn btn-outline-primary">Back</a>
+                {% endif %}
+                {% if user.is_authenticated and user.is_superuser and request.path != '/admin_dashboard/' %}
+                    <a href="{% url 'admin_dashboard' %}" class="btn btn-outline-primary">Go to Admin Dashboard</a>
+                {% endif %}
+                {% if user.is_authenticated %}
+                <form action="{% url 'custom_logout' %}" method="post" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-outline-danger">Logout</button>
+                </form>
+                {% else %}
+                    <a href="{% url 'login' %}" class="btn btn-outline-primary">Login</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-4">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

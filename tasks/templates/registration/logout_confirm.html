@@ -1,0 +1,10 @@
+{% extends "tasks/base.html" %}
+
+{% block content %}
+<h2>Are you sure you want to log out?</h2>
+<form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Yes, Logout</button>
+    <a href="/" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}
