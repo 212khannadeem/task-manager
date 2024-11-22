@@ -124,7 +124,7 @@ Visit http://127.0.0.1:8000/ in your web browser.
   - Delete tasks
     
 ## **For Admins**:
-  - Admin Dashboard: Access http://127.0.0.1:8000/admin_dashboard/ (login as a superuser).
+  - Admin Dashboard: Access http://127.0.0.1:8000/admin_dashboard/ or Just click on "Go To Admin Dashboard" (login as a superuser).
   - Manage users and tasks.
   - Send invitations via email.
 
