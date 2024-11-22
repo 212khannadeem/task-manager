@@ -59,7 +59,7 @@ A simple task management web application built with Django. It includes features
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/<your-username>/task-manager.git
+git clone https://github.com/212khannadeem/task-manager.git
 cd task-manager
 ```
 
